@@ -1,5 +1,6 @@
 from BiliPropaganda import *
 import BiliLogin
+import argparse
 
 def Main(发送,匹配):
     alist = 推荐()
@@ -24,6 +25,21 @@ def Main(发送,匹配):
             print(i)
 
 BiliLogin.main()
+parser = argparse.ArgumentParser()
+parser.add_argument("-m", "--message", help="需要发送的消息，为字符串，换行用'\\n'")
+parser.add_argument("-c", "--condition", help="消息发送条件,为用','分割的任意字符")
+args = parser.parse_args()
+if args.message:
+    message = args.message
+else:
+    exit()
+if args.condition:
+    condition = args.condition
+else:
+    exit()
+condition = condition.split(",")
 while True:
-    Main("https://www.boxpaper.club/bilitools/",["求封面","要封面"])
+    print("start...")
+    #Main("https://www.boxpaper.club/bilitools/",["求封面","要封面"])
+    Main(message,condition)
     time.sleep(30)
