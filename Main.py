@@ -8,14 +8,14 @@ def Main(发送,匹配):
         评论 = 获取评论(i)
         弹幕 = 获取弹幕(i)
         所有 = 评论 + 弹幕
-        是否找到 = False
+        是否找到 = 0
         for a in 所有:
             for v in 匹配:
                 result = re.search(v,a)
                 if result:
                     print(a)
-                    是否找到 = True
-        if 是否找到:
+                    是否找到 += 1
+        if 是否找到>5:
             发送结果 = 发送评论(i,发送)
             if 发送结果["code"] == 0:
                 print("发送成功！")
