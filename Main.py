@@ -16,7 +16,8 @@ def Main(发送,匹配):
                     print(a)
                     是否找到 += 1
         if 是否找到>5:
-            发送结果 = 发送评论(i,发送)
+            封面 = 获取封面(i)
+            发送结果 = 发送评论(i,发送 % 封面)
             if 发送结果["code"] == 0:
                 print("发送成功！")
             else:
@@ -37,9 +38,14 @@ if args.condition:
     condition = args.condition
 else:
     exit()
-condition = condition.split(",")
-while True:
-    print("start...")
-    #Main("https://www.boxpaper.club/bilitools/",["求封面","要封面"])
-    Main(message,condition)
-    time.sleep(30)
+if not 'condition' in locals().keys():
+    while True:
+        print("start...")
+        Main("我自己做的封面提取\nhttp://t.cn/Ai8KbsTs\n各位可以支持一下吗(>▽<)\n这个视频的封面%s",["求封面","要封面"])
+        time.sleep(30)
+else:
+    condition = condition.split(",")
+    while True:
+        print("start...")
+        Main(message,condition)
+        time.sleep(30)
