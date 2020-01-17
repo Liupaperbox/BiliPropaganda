@@ -41,7 +41,7 @@ else:
 if not 'condition' in locals().keys():
     while True:
         print("start...")
-        Main("我自己做的封面提取\nhttp://t.cn/Ai8KbsTs\n各位可以支持一下吗(>▽<)\n这个视频的封面%s",["求封面","要封面"])
+        Main("我自己做的封面提取\nhttp://t.cn/Ai8KbsTs\n各位可以支持一下吗(>▽<)\n如果想要找到P站原图，请先在https://saucenao.com/搜索P站Id,然后去我做的P站图片获取上下载https://www.boxpaper.club/PixivUMP/\n这个视频的封面%s",["求封面","要封面"])
         time.sleep(30)
 else:
     condition = condition.split(",")
