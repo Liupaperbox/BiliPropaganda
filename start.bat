@@ -1,1 +1,0 @@
-python Main.py -m 我自己做的封面提取\nhttps://0x9.me/41jNQ\n各位可以支持一下吗\n  -c 求封面,要封面

@@ -14,21 +14,4 @@ argparse,lxml,re,time,json,requests,qrcode,matplotlib,pickle,os
 
 Clone后可以直接运行Main.py,会出来扫码图片，使用哔哩哔哩手机客户端扫码获取Cookie并保存到cookie.pkl,
 
-参数:
-
-`-m 需要发送的消息，为字符串，换行用'\n'`
-
-`-c 消息发送条件,为用','分割的任意字符`
-
-实例:
-`python Main.py -m https://www.boxpaper.club/bilitools/ -c 求封面,要封面`
-
-截图
-
-![1](/Screenshot/a1.png)
-
-![2](/Screenshot/a3.png)
-
-![3](/Screenshot/a2.png)
-
 支持我的话，可以去我的[主页](https://www.boxpaper.club/)看看哦

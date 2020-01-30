@@ -1,6 +1,5 @@
 from BiliPropaganda import *
 import BiliLogin
-import argparse
 
 def Main(发送,匹配):
     alist = 推荐()
@@ -26,26 +25,7 @@ def Main(发送,匹配):
             print(i)
 
 BiliLogin.main()
-parser = argparse.ArgumentParser()
-parser.add_argument("-m", "--message", help="需要发送的消息，为字符串，换行用'\\n'")
-parser.add_argument("-c", "--condition", help="消息发送条件,为用','分割的任意字符")
-args = parser.parse_args()
-if args.message:
-    message = args.message
-else:
-    exit()
-if args.condition:
-    condition = args.condition
-else:
-    exit()
-if not 'condition' in locals().keys():
-    while True:
-        print("start...")
-        Main("我自己做的封面提取\nhttp://t.cn/Ai8KbsTs\n各位可以支持一下吗(>▽<)\n如果想要找到P站原图，请先在https://saucenao.com/搜索P站Id,然后去我做的P站图片获取上下载https://www.boxpaper.club/PixivUMP/\n这个视频的封面%s",["求封面","要封面"])
-        time.sleep(30)
-else:
-    condition = condition.split(",")
-    while True:
-        print("start...")
-        Main(message,condition)
-        time.sleep(30)
+while True:
+    print("start...")
+    Main("我自己做的封面提取\nhttps://u.nu/zm8p\n各位可以支持一下吗(>▽<)\n如果想要找到P站原图，请先在https://saucenao.com/搜索P站Id,然后去我做的P站图片获取上下载https://www.boxpaper.club/PixivUMP/\n这个视频的封面%s",["求封面","要封面"])
+    time.sleep(30)
