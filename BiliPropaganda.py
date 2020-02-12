@@ -2,9 +2,13 @@
 import requests
 import json
 from lxml import etree
+import random
+import string
 import re 
 import time
 import BiliLogin
+from tenacity import retry
+@retry()
 def 获取封面(av_num):
     header = {'Cookie':'','Upgrade-Insecure-Requests':'1','User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}
     url = 'http://api.bilibili.com/x/web-interface/search/type?context=&search_type=video&page=1&order=&duration=&category_id=&tids_1=&tids_2=&__refresh__=true&highlight=1&single_column=0&jsonp=jsonp&keyword='
@@ -42,9 +46,14 @@ def 获取评论(avid,ifrpid=False):
     fi=[]
     if ifrpid:
         li=[]
-    while(True):
+    A=True
+    while A:
         url=html+str(count)
-        url=requests.get(url)
+        A=False
+        try:
+            url=requests.get(url)
+        except:
+            A=True
         if url.status_code==200:
             cont=json.loads(url.text)
         else:
@@ -94,7 +103,7 @@ def 获取评论(avid,ifrpid=False):
     return fi
 
 def 推荐():
-    url=requests.get("http://api.bilibili.com/x/web-interface/dynamic/region?rid=1&jsonp=jsonp&_sw-precache=juoihjoi")
+    url=requests.get("http://api.bilibili.com/x/web-interface/dynamic/region?rid=1&jsonp=jsonp&_sw-precache="+"".join(random.sample(string.ascii_letters + string.digits, 8)))
     if url.status_code==200:
         cont=json.loads(url.text)
         cont=cont["data"]["archives"]

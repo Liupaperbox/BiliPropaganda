@@ -39,9 +39,9 @@ class BilibiliLogin():
                 return True
             else:
                 return False
-def main():
+def main(cookfile="cookie.pkl"):
     loga=BilibiliLogin()
-    pick = loga.pickla("cookie.pkl",False)
+    pick = loga.pickla(cookfile,False)
     if pick:
         return pick
     else:
