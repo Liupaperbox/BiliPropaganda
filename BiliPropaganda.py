@@ -42,7 +42,7 @@ def 获取弹幕(avid):
 def 获取评论(avid,ifrpid=False):
     count=1
     url="http://api.bilibili.com/x/v2/reply?type=1&oid="
-    html=url+str(avid)+'&pn='
+    html=url+str(avid)+'&pn=1'
     fi=[]
     if ifrpid:
         li=[]
